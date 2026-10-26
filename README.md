@@ -1,4 +1,20 @@
-\# Inventory Management System – DBMS Case Study
+
+
+\# Inventory Management System
+
+\### DBMS Case Study | MySQL 8.0
+
+
+
+A relational database project designed to manage inventory operations, including products, suppliers, purchase orders, sales, warehouses, stock levels, and pricing information.
+
+
+
+This project was developed as part of our Database Management Systems (DBMS) coursework to demonstrate practical implementation of database design, relational modeling, and SQL queries.
+
+
+
+\---
 
 
 
@@ -6,155 +22,265 @@
 
 
 
-The Inventory Management System is a database management project developed using MySQL 8.0. It is designed to organize and manage products, suppliers, customers, employees, purchase orders, sales transactions, warehouse stock, and product pricing.
+Managing inventory efficiently is essential for shops, warehouses, and businesses. Manual record maintenance can result in data duplication, inaccurate stock information, and difficulty in retrieving records.
 
 
 
-This project demonstrates the practical implementation of relational database concepts using SQL.
+The Inventory Management System addresses these challenges by organizing inventory-related information into a structured relational database using MySQL.
 
 
 
-\## Objectives
+The project focuses on database design, table creation, relationships, constraints, data insertion, and SQL-based reporting.
 
 
 
-\- Maintain organized product and inventory records.
+\## Project Objectives
 
-\- Manage suppliers, customers, and employees.
 
-\- Track purchase orders and sales transactions.
 
-\- Monitor stock availability across warehouses.
+\- Design a structured relational database for inventory management.
 
-\- Identify products that require reordering.
+\- Maintain product, category, supplier, customer, and employee information.
 
-\- Generate inventory and sales reports.
+\- Record purchase orders and sales transactions.
 
-\- Maintain data integrity using database constraints.
+\- Track product quantities across multiple warehouses.
 
+\- Identify products that have reached their reorder levels.
 
+\- Maintain product price history and supplier information.
 
-\## Technologies Used
+\- Generate meaningful inventory and sales reports.
 
+\- Ensure data consistency using primary keys, foreign keys, and constraints.
 
 
-\- \*\*Database:\*\* MySQL 8.0
 
-\- \*\*Language:\*\* SQL
+\## Technology Stack
 
-\- \*\*Interface:\*\* MySQL Command Line Client
 
-\- \*\*Version Control:\*\* Git and GitHub
 
+| Component | Technology |
 
+|-----------|------------|
 
-\## Database Structure
+| Database | MySQL 8.0 |
 
+| Query Language | SQL |
 
+| Development Interface | MySQL Command Line Client |
 
-The database consists of 13 relational tables:
+| Version Control | Git |
 
+| Repository Hosting | GitHub |
 
 
-1\. Category
 
-2\. Supplier
+\## Database Design
 
-3\. Product
 
-4\. Warehouse
 
-5\. Employee
+The database consists of \*\*13 relational tables\*\*, organized into the following categories.
 
-6\. Customer
 
-7\. PurchaseOrder
 
-8\. PurchaseOrderItem
+\### Product and Supplier Management
 
-9\. Sale
+\- \*\*Category\*\* – Stores product category details.
 
-10\. SaleItem
+\- \*\*Product\*\* – Maintains product information, prices, and reorder levels.
 
-11\. Stock
+\- \*\*Supplier\*\* – Stores supplier contact information.
 
-12\. ProductSupplier
+\- \*\*ProductSupplier\*\* – Establishes product-supplier relationships, including supply prices and lead times.
 
-13\. PriceHistory
 
 
+\### Purchase and Sales Management
 
-The tables are connected using primary keys and foreign keys to maintain referential integrity.
+\- \*\*PurchaseOrder\*\* – Records purchase orders placed with suppliers.
 
+\- \*\*PurchaseOrderItem\*\* – Stores individual products included in purchase orders.
 
+\- \*\*Sale\*\* – Records customer sales transactions.
 
-\## Database Features
+\- \*\*SaleItem\*\* – Stores products, quantities, and prices for each sale.
 
 
 
-\- Product and category management
+\### Inventory and Warehouse Management
 
-\- Supplier information management
+\- \*\*Warehouse\*\* – Maintains warehouse information.
 
-\- Customer and employee records
+\- \*\*Stock\*\* – Tracks product quantities in different warehouses.
 
-\- Purchase order tracking
 
-\- Sales transaction records
 
-\- Warehouse-wise inventory tracking
+\### Other Supporting Tables
 
-\- Reorder-level identification
+\- \*\*Customer\*\* – Stores customer information.
 
-\- Product price history
+\- \*\*Employee\*\* – Maintains employee information and roles.
 
-\- Inventory valuation
+\- \*\*PriceHistory\*\* – Tracks historical and current product prices.
 
-\- Monthly sales reporting
 
 
+\### Database Relationships
 
-\## SQL Concepts Implemented
 
 
+The database uses:
 
-The project demonstrates:
 
 
+\- Primary keys to uniquely identify records.
 
-\- DDL and DML commands
+\- Foreign keys to establish relationships between tables.
+
+\- Composite primary keys in junction tables.
+
+\- One-to-many and many-to-many relationships.
+
+\- Constraints to maintain referential integrity.
+
+
+
+\## Key Features
+
+
+
+\### Inventory Management
+
+\- Store and retrieve product details.
+
+\- Track stock quantities by warehouse.
+
+\- Identify low-stock products using reorder levels.
+
+\- Calculate warehouse-wise inventory value.
+
+
+
+\### Purchase Management
+
+\- Maintain supplier details.
+
+\- Record purchase orders and their items.
+
+\- Retrieve expected delivery dates and purchase costs.
+
+
+
+\### Sales Management
+
+\- Maintain customer and employee records.
+
+\- Record sales transactions and their items.
+
+\- Generate detailed sales reports.
+
+\- Calculate monthly sales revenue.
+
+
+
+\### Pricing and Reporting
+
+\- Calculate product profit amounts and markup percentages.
+
+\- Retrieve current product prices.
+
+\- Maintain historical pricing records.
+
+\- Analyze product prices, suppliers, and sales.
+
+
+
+\## SQL Concepts Demonstrated
+
+
+
+The project demonstrates the following SQL concepts:
+
+
+
+\- DDL commands: `create`, `alter`, `drop`
+
+\- DML commands: `insert`, `update`, `delete`
+
+\- Data retrieval using `select`
 
 \- Primary keys and foreign keys
 
 \- Composite primary keys
 
-\- Database constraints
+\- `inner join` and `left join`
 
-\- Inner joins and left joins
-
-\- Aggregate functions (`count`, `sum`, `avg`, `min`, `max`)
-
-\- Subqueries
+\- Aggregate functions: `count`, `sum`, `avg`, `min`, `max`
 
 \- `group by` and `having`
 
+\- Subqueries
+
+\- `where`, `between`, and `like`
+
 \- `order by` and `limit`
 
-\- Pattern matching using `like`
-
-\- Filtering using `where` and `between`
+\- Date formatting and calculations
 
 
 
-\## SQL Queries
+\## SQL Queries and Reports
 
 
 
-A total of 20 SQL queries were implemented to demonstrate data retrieval and reporting.
+The project includes \*\*20 SQL queries\*\* covering:
 
 
 
-These include product filtering, category-wise product counts, employee sales analysis, low-stock identification, warehouse inventory valuation, supplier details, price history, and monthly sales revenue.
+1\. Products above a specified selling price
+
+2\. Products within a price range
+
+3\. Product search using pattern matching
+
+4\. Three most expensive products
+
+5\. Product profit and markup calculations
+
+6\. Products with their categories
+
+7\. Purchase orders with supplier details
+
+8\. Sales with customer and employee details
+
+9\. Customers and their sales
+
+10\. Product count and price statistics
+
+11\. Category-wise product counts
+
+12\. Employees handling multiple sales
+
+13\. Products priced above average
+
+14\. Suppliers associated with purchase orders
+
+15\. Products at or below reorder levels
+
+16\. Warehouse-wise inventory valuation
+
+17\. Product-supplier pricing and lead times
+
+18\. Current product selling prices
+
+19\. Monthly sales revenue
+
+20\. Detailed sales transaction reports
+
+
+
+The SQL statements are available in the `queries/queries.sql` file.
 
 
 
@@ -166,59 +292,179 @@ These include product filtering, category-wise product counts, employee sales an
 
 Inventory\_Management\_System\_CaseStudy/
 
-├── database/
+|
 
-│   └── InventoryManagementSystem.sql
+|-- database/
 
-├── queries/
+|   |-- InventoryManagementSystem.sql
 
-│   └── queries.sql
+|
 
-└── README.md
+|-- queries/
+
+|   |-- queries.sql
+
+|
+
+|-- README.md
 
 ```
 
 
 
-\## How to Run
+\## Getting Started
 
 
 
-1\. Install MySQL 8.0.
-
-2\. Download or clone this repository.
-
-3\. Import `database/InventoryManagementSystem.sql` into MySQL.
-
-4\. Select the `inventorymanagementsystem` database.
-
-5\. Execute the SQL statements in `queries/queries.sql` to view the results.
+\### Prerequisites
 
 
 
-\## Project Outcome
+\- MySQL Server 8.0 or later
+
+\- MySQL Command Line Client
 
 
 
-The project successfully demonstrates the creation and management of a relational inventory database using MySQL.
+\### 1. Clone the Repository
 
 
 
-It provides practical experience in database design, SQL implementation, table relationships, data integrity, and analytical reporting.
+```bash
+
+git clone https://github.com/pvsatvika/Inventory\_Management\_System\_CaseStudy.git
+
+```
 
 
 
-\## Project Type
+\### 2. Import the Database
 
 
 
-Academic DBMS Case Study
+Open a terminal in the repository folder and execute:
 
 
 
-\## Team
+```bash
+
+mysql -u root -p < database/InventoryManagementSystem.sql
+
+```
 
 
 
-Developed as a team project by nine members.
+Enter your MySQL password when prompted.
+
+
+
+\### 3. Select the Database
+
+
+
+Open MySQL Command Line Client:
+
+
+
+```sql
+
+use inventorymanagementsystem;
+
+```
+
+
+
+\### 4. Verify the Tables
+
+
+
+```sql
+
+show tables;
+
+```
+
+
+
+\### 5. Execute the SQL Queries
+
+
+
+From the repository folder, you can execute the queries using:
+
+
+
+```bash
+
+mysql -u root -p inventorymanagementsystem < queries/queries.sql
+
+```
+
+
+
+Alternatively, open `queries/queries.sql` and execute individual statements in MySQL.
+
+
+
+\## Project Results
+
+
+
+The project demonstrates:
+
+
+
+\- Creation of 13 interconnected relational tables.
+
+\- Implementation of database constraints and relationships.
+
+\- Insertion and retrieval of sample inventory records.
+
+\- Execution of 20 SQL queries.
+
+\- Inventory tracking and reorder-level analysis.
+
+\- Sales, supplier, pricing, and warehouse reporting.
+
+
+
+\## Scope and Limitations
+
+
+
+This is a \*\*MySQL-based academic database implementation\*\*.
+
+
+
+The project demonstrates database design and SQL operations. It does not include a frontend application, automated inventory updates, or a production deployment.
+
+
+
+\## Conclusion
+
+
+
+The Inventory Management System demonstrates how relational database concepts can be applied to organize and retrieve inventory information efficiently.
+
+
+
+Through this project, we gained practical experience in database design, SQL programming, relational integrity, joins, subqueries, aggregate functions, and reporting.
+
+
+
+\---
+
+
+
+\*\*Project Type:\*\* Academic DBMS Case Study
+
+
+
+\*\*Team Size:\*\* 9 Members
+
+
+
+\*\*Technology:\*\* MySQL 8.0
+
+
 
